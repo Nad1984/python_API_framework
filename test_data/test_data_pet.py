@@ -4,46 +4,28 @@ test2 = (("sold", ("id", "name", "category", "photoUrls", "tags", "status")),
          ("available", ("id", "name", "category", "photoUrls", "tags", "status")),
          ("pending", ("")))
 test3 = (({
-    "id": 10,
-    "name": "doggie",
+    "id": 11,
+    "name": "PusyMusi",
     "category": {
         "id": 1,
         "name": "Dogs"
     },
     "photoUrls": [
-        "string"
+        "https://www.pexels.com/photo/short-coated-tan-dog-2253275/"
     ],
     "tags": [
         {
-            "id": 1,
-            "name": "super puper"
+            "id": 2,
+            "name": "shock"
         }
     ],
-    "status": "sold"
+    "status": "available"
 }),
-         ({
-             "id": 11,
-             "name": "PusyMusi",
-             "category": {
-                 "id": 2,
-                 "name": "Dogs"
-             },
-             "photoUrls": [
-                 "https://www.pexels.com/photo/short-coated-tan-dog-2253275/"
-             ],
-             "tags": [
-                 {
-                     "id": 2,
-                     "name": "shock"
-                 }
-             ],
-             "status": "available"
-         }),
          ({
              "id": 12,
              "name": "Fluffy",
              "category": {
-                 "id": 3,
+                 "id": 1,
                  "name": "Dogs"
              },
              "photoUrls": [
@@ -56,21 +38,38 @@ test3 = (({
                  }
              ],
              "status": "available"
-         }))
-test4 = (({
-    "id": 10,
-    "name": "Pusik",
+         }), ({
+    "id": 13,
+    "name": "Bad cat",
     "category": {
-        "id": 1,
-        "name": "Dogs"
+        "id": 2,
+        "name": "Cats"
     },
     "photoUrls": [
-        "string"
+        "URL5"
     ],
     "tags": [
         {
-            "id": 1,
-            "name": "super puppy"
+            "id": 22,
+            "name": "sharp claw"
+        }
+    ],
+    "status": "sold"
+}))
+test4 = (({
+    "id": 13,
+    "name": "Baddest cat",
+    "category": {
+        "id": 2,
+        "name": "Cats"
+    },
+    "photoUrls": [
+        "URL5"
+    ],
+    "tags": [
+        {
+            "id": 22,
+            "name": "Sharpest claws"
         }
     ],
     "status": "sold"
@@ -79,7 +78,7 @@ test4 = (({
              "id": 11,
              "name": "Sharik",
              "category": {
-                 "id": 2,
+                 "id": 1,
                  "name": "Dogs"
              },
              "photoUrls": [
@@ -97,11 +96,12 @@ test4 = (({
              "id": 12,
              "name": "Fluffy grace",
              "category": {
-                 "id": 3,
+                 "id": 1,
                  "name": "Dogs"
              },
              "photoUrls": [
-                 "string"
+                 "url1",
+                 "url2"
              ],
              "tags": [
                  {
@@ -111,8 +111,10 @@ test4 = (({
              ],
              "status": "pending"
          }))
-test5 = ((10, "Pusik"), (11, "Sharik"), (12, "Fluffy grace"))
-test6 = ("super puppy", "quite", "shock")
+test5 = ((13, "Baddest cat", 2, "Cats", 22, "Sharpest claws", ["URL5"], "sold"), (
+    11, "Sharik", 1, "Dogs", 2, "shock", ["https://www.pexels.com/photo/short-coated-tan-dog-2253275/"], "available"),
+         (12, "Fluffy grace", 1, "Dogs", 3, "quite", ["url1", "url2"], "pending"))
+test6 = ("quite", "shock", "Sharpest claws")
 test7 = ("", "AvailabLe", "~!#@$$%&^*789423")
 test8 = ((({
     "id": "$elect*",
@@ -168,3 +170,128 @@ test8 = ((({
              ],
              "status": "pending"
          }), 400))
+
+test9 = (({
+    "id": "",
+    "name": "",
+    "category": {
+        "id": "",
+        "name": ""
+    },
+    "photoUrls": [
+        ""
+    ],
+    "tags": [
+        {
+            "id": "",
+            "name": ""
+        }
+    ],
+    "status": ""
+}), ({
+    "id": "",
+    "name": "",
+    "category": {
+        "id": "",
+        "name": ""
+    },
+    "photoUrls": [
+        ""
+    ],
+    "tags": [
+        {
+            "id": "",
+            "name": ""
+        }
+    ],
+    "status": ""
+}))
+
+test10 = (({
+    "id": "@#$#^%$&",
+    "name": "",
+    "category": {
+        "id": "5",
+        "name": ""
+    },
+    "photoUrls": [
+        ""
+    ],
+    "tags": [
+        {
+            "id": "",
+            "name": ""
+        }
+    ],
+    "status": ""
+}), ({
+    "id": "sdfsfdd",
+    "name": "",
+    "category": {
+        "id": "",
+        "name": ""
+    },
+    "photoUrls": [
+        ""
+    ],
+    "tags": [
+        {
+            "id": "",
+            "name": ""
+        }
+    ],
+    "status": ""
+}), ({
+    "id": False,
+    "name": "",
+    "category": {
+        "id": "",
+        "name": ""
+    },
+    "photoUrls": [
+        ""
+    ],
+    "tags": [
+        {
+            "id": "",
+            "name": ""
+        }
+    ],
+    "status": ""
+}))
+
+test11 = (({
+    "id": 13,
+    "name": "Bad cat",
+    "category": {
+        "id": 2,
+        "name": "Cats"
+    },
+    "photoUrls": [
+        "URL5"
+    ],
+    "tags": [
+        {
+            "id": 22,
+            "name": "sharp claw"
+        }
+    ],
+    "status": "sold"
+}), ({
+    "id": 13,
+    "name": "Bad cat",
+    "category": {
+        "id": 2,
+        "name": "Cats"
+    },
+    "photoUrls": [
+        "URL5"
+    ],
+    "tags": [
+        {
+            "id": 22,
+            "name": "sharp claw"
+        }
+    ],
+    "status": "sold"
+}))

@@ -6,7 +6,7 @@ import pytest_check as check
 from api_clients import user_api_client
 from api_clients.user_api_client import UserApiClient
 from fixtures.utils import is_json
-from test_data.test_data_user import user1, user2, user3, user4
+from test_data.test_data_user import user1, user2, user3, user4, user5
 
 
 @pytest.mark.user
@@ -49,4 +49,13 @@ def test_user_logout():
 def test_get_user_by_name(user_name):
     user_client = UserApiClient()
     response_body = user_client.find_user_by_name(user_name)
-    assert response_body.ok, f"Expected response is OK, but got {response_body.status_code}"
+    assert response_body.ok, f"Expected response is 200 OK, but got {response_body.status_code}"
+
+
+@pytest.mark.user
+@pytest.mark.parametrize("user_name, expected_status_code", user5)
+def test_get_user_by_name_negative(user_name, expected_status_code):
+    user_client = UserApiClient()
+    response_body = user_client.find_user_by_name(user_name)
+    code = response_body.status_code
+    check.equal(code, expected_status_code), f"Expected response is {expected_status_code}, but got {response_body.status_code}. "

@@ -93,4 +93,6 @@ user3 = (("CandyBar", "SuperPass123"),
          ("*SecondUser*", "philosopher's stone 5555"),
          ("", ""))
 
-user4 = (("theUser"), ("CandyBar"), ("Professor%)"), (""))
+user4 = ("Super-User", "***SecondUser***", "SecondUser", "Professor")
+
+user5 = (("Bla-bla-User", 404), ("Carmen", 404), ("Profe$$or%)", 404), ("", 405) )
