@@ -37,11 +37,11 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
       run: |
-        pytest -m -s --html=results/report.html --self-contained-html
+        pytest -s --html=results/report.html --self-contained-html
 
     - uses: actions/upload-artifact@v4
       if: always()
       with:
-        name: html-report
-        path: html-report/
+        name: report.html
+        path: results/
         retention-days: 30
