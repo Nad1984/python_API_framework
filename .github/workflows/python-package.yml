@@ -23,7 +23,7 @@ jobs:
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v5
       with:
-        python-version: ${{ matrix.python-version }}
+        python-version: "3.11"
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
@@ -37,4 +37,11 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
       run: |
-        pytest
+        pytest -m -s --html=results/report.html --self-contained-html
+
+    - uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: html-report
+        path: html-report/
+        retention-days: 30
